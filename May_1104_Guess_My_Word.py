@@ -3,6 +3,7 @@
 # You don't need to understand this helper code,
 # but you will have to know how to use the functions
 # (so be sure to read the docstrings!)
+# collaborated with chuck
 
 import random
 import string
@@ -45,7 +46,7 @@ def is_word_guessed(secret_word, letters_guessed):
         return False
     return True
 
-print(is_word_guessed('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
+# print(is_word_guessed('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
 # print(is_word_guessed('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
 # print(is_word_guessed('pineapple', []))
 
@@ -61,5 +62,20 @@ def get_guessed_word(secret_word, letters_guessed):
     return output
 
 # print(get_guessed_word('apple', ['a', 'e', 'i', 'k', 'p', 'r', 's']))
-print(get_guessed_word('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u']))
+# print(get_guessed_word('durian', ['h', 'a', 'c', 'd', 'i', 'm', 'n', 'r', 't', 'u'])) 
 # print(get_guessed_word('pineapple', []))
+
+def is_letter_in_word(secret_word, letter_guessed):
+    """
+    secret_word: string, the word the user is guessing
+    letter_guessed: the current letter the user typed in to guess
+    returns: boolean, True if the letter_guessed matches at least 1 letter in secret_word;
+    False otherwise
+    """
+    for character in secret_word:
+        if character.lower() == letter_guessed.lower():
+              return True
+        else:
+           return False
+        
+print(is_letter_in_word('Neko', ('O')))
